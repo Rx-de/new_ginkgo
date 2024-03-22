@@ -42,5 +42,4 @@ function build_kernel() {
 
 # execute
 clean
-MAKE="./makeparallel"
 build_kernel
