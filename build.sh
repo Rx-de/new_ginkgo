@@ -24,7 +24,7 @@ function build_kernel() {
     echo -e "\n"
 
     make -j$(nproc --all) O=out ARCH=arm64 fury-perf_defconfig
-    make -j$(nproc --all) ARCH=arm64 O=out \
+    make -j$(nproc --all) ARCH=arm64 O=out fury-perf_defconfig \
                           CROSS_COMPILE=aarch64-linux-gnu- \
                           CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
                           CROSS_COMPILE_COMPAT=arm-linux-gnueabi Image.gz-dtb dtbo.img
@@ -42,4 +42,5 @@ function build_kernel() {
 
 # execute
 clean
+MAKE="./makeparallel"
 build_kernel
