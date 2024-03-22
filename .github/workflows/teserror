@@ -1,0 +1,19 @@
+name: tes error
+on:
+  workflow_call:
+  workflow_dispatch:
+  
+jobs:
+   build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: setting configurasi
+      uses: actions/checkout@v3
+
+    - name: setup environment
+      run: |
+          ls \
+    - name: ready compile...
+      run: |
+          ls
